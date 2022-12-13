@@ -49,6 +49,7 @@ import type {
   SayRequest,
   CountRequest as CountRequest,
 } from "./jest/mock-data/eliza/eliza_pb";
+// unused import not an error?
 import type { InfiniteData, QueryFunctionContext } from "@tanstack/react-query";
 import { useQuery, useMutation, useInfiniteQuery } from "@tanstack/react-query";
 import type {

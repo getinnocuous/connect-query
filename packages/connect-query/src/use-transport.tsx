@@ -19,6 +19,11 @@ import { createContext, useContext } from "react";
 
 const transportContext = createContext(
   createConnectTransport({
+    // this will raise a TypeError: Failed to construct 'URL': Invalid URL
+    // in upcoming versions of @bufbuild/connect-web as soon as the user
+    // tries to run an RPC.
+    // recommend to return a Transport that raised an error with a friendly explanatory message
+    //
     // TODO, should this be initialized to null instead of a useless transport (where, I'm assuming that baseUrl being empty makes it useless)?
     baseUrl: "",
   })

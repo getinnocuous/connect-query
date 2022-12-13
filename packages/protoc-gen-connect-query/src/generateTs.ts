@@ -81,6 +81,7 @@ export const generateTs: PluginInit["generateJs"] & PluginInit["generateTs"] = (
   extension
 ) => {
   schema.files
+      // looks like it would be safe to remove this line
     .filter((protoFile) => protoFile.services.length > 0)
     .forEach((protoFile) => {
       protoFile.services.forEach(

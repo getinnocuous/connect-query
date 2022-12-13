@@ -18,6 +18,9 @@ import type { Schema } from "@bufbuild/protoplugin";
 import { localName } from "@bufbuild/protoplugin/ecmascript";
 import type { PluginInit } from "./utils";
 
+// nit: "TypeScript _Declaration_ file"
+// nit: export is unused. removing it will show unused declarations.
+// what do you think of a prettier-ignore annotation?
 /**
  * Handles generating a TypeScript Definition file for a given Schema, DescFile (protobuf definition) and protobuf Service.
  */
@@ -58,6 +61,7 @@ export const generateServiceFile =
  */
 export const generateDts: PluginInit["generateDts"] = (schema) => {
   schema.files
+    // looks like it would be safe to remove this line
     .filter((protoFile) => protoFile.services.length > 0)
     .forEach((protoFile) => {
       protoFile.services.forEach(generateServiceFile(schema, protoFile));

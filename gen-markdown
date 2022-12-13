@@ -1,3 +1,5 @@
+// unused yet? i foresee bike-shedding :)
+
 const { generateDocumentation } = require('tsdoc-markdown');
 
 // Start from a single file and explore the TypeScript tree

@@ -1,3 +1,4 @@
+// don't think .vscode should be checked in. what about .idea, and .eclipse, .vimrc, .editorconfig, etc.?
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.defaultFormatter": "esbenp.prettier-vscode",

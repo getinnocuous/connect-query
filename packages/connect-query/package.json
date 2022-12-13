@@ -1,4 +1,5 @@
 {
+  // needs @bufbuild scope
   "name": "connect-query",
   "version": "0.0.1",
   "main": "dist/src/index.js",
@@ -23,15 +24,22 @@
     "@testing-library/react": "^13.4.0",
     "jest-environment-jsdom": "^29.3.1"
   },
+  // probably a good call to add sideEffects: false
   "dependencies": {
     "@bufbuild/connect-web": "^0.3.3",
     "@bufbuild/protobuf": "^0.4.0",
+    // i don't think this should be a dependency. the code does not require it.
     "@bufbuild/protoc-gen-es": "^0.4.0",
+    // i don't think the code requires the plugin framework.
     "@bufbuild/protoplugin": "^0.4.0",
+    // this is going to cause problems for users that are pinned to different versions. why not a peer dependency?
     "@tanstack/react-query": "^4.19.1",
     "stable-hash": "^0.0.2",
+    // this is going to cause problems for users that are pinned to different versions. why not a peer dependency?
     "react": "^18.2.0",
+    // this is going to cause problems for users that are pinned to different versions. why not a peer dependency?
     "react-dom": "^18.2.0",
+    // i don't think the code requires typescript.
     "typescript": "^4.9.4"
   }
 }

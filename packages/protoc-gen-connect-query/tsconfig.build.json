@@ -6,6 +6,7 @@
     "module": "CommonJS",
     "resolveJsonModule": true,
     "paths": {
+      // don't think you need this?
       "connect-query": ["../connect-query"]
     }
   }

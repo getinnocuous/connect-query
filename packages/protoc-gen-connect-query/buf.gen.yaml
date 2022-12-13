@@ -1,6 +1,12 @@
 # buf.gen.yaml defines a local generation template.
 # For details, see https://docs.buf.build/configuration/v1/buf-gen-yaml
 version: v1
+
+# it looks like we have full test coverage - does it make sense to generate all this?
+# right now, all generated files end up in the published package.
+# we already do mostly the same in the example.
+# the duplicate eliza.proto isn't ideal (don't have an idea for this situation though)
+
 plugins:
   - name: es
     opt: target=ts

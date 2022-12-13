@@ -54,6 +54,10 @@ export type IsSupportedMethod<
   O extends Message<O>
 > = MethodInfoUnary<I, O>;
 
+// we're wrapping at 80 columns pretty religiously everywhere in protobuf-es and connect-web
+// it makes it much easier to read the comments from source code.
+// can you wrap them?
+
 /** This explicitly states the `MethodKind`s that are supported by Connect-Query and provides a means to convert those kinds into the Hooks types (e.g. UnaryHooks) */
 export interface SupportedMethodInfo<MI extends MethodInfo> {
   // in the future, this type is constructed so that new method kinds can be added like this:
@@ -126,6 +130,10 @@ export const createQueryHooks = <Service extends ServiceType>({
           return accumulator;
 
         default:
+          // it seems _extremely_ unlikely that we are going to see an additional
+          // method kind during our lifetime. if we do, it is going to be a breaking
+          // change. in my mind, it is okay to throw an error here, even though i'm
+          // aware that it would be an import-time error.
           console.error(
             unreachableCase(
               methodInfo,

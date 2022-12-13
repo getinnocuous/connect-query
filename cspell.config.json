@@ -1,3 +1,6 @@
+// is this more useful than vale, which we are already using?
+// seems like we would be better off using one tool, so that we can
+// potentially unify configs
 {
   "words": [
     "Weizenbaum's",
